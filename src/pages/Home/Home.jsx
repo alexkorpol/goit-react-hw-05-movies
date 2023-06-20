@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MoviesList } from "components/MoviesList/MoviesList";
 // import { SearchBox } from "../components/SearchBox";
 // import { getProducts } from "../fakeAPI";
-import { getTrendingMovies } from "components/Api/api";
+import { getTrendingMovies } from "service/api";
 import ErrorMessageToUser from 'components/ErrorOccurred/ErrorOccurred';
 import Loader from 'components/Loader/Loader';
 

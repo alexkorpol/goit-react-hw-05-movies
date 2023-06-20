@@ -4,7 +4,7 @@ import { MoviesList } from 'components/MoviesList/MoviesList';
 import ErrorMessageToUser from 'components/ErrorOccurred/ErrorOccurred';
 import SearchForm from 'components/SearchForm/SearchForm';
 import Loader from 'components/Loader/Loader';
-import { searchMovies } from 'components/Api/api';
+import { searchMovies } from 'service/api';
 
 
 

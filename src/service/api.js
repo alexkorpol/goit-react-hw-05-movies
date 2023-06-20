@@ -76,6 +76,24 @@ export const searchMovies = async (query, page = 1) => {
     return data.results;
 };
 
+// for details info about movie
+export const getMovieDetails = async movieId => {
+  const { data } = await axios.get(`/movie/${movieId}`);
+    return data;
+};
+
+// export const getMovieCredits = async movieId => {
+//   const { data } = await axios.get(`/movie/${movieId}/credits`);
+
+//   return data;
+// };
+
+// export const getMovieReviews = async movieId => {
+//   const { data } = await axios.get(`/movie/${movieId}/reviews`);
+
+//   return data;
+// };
+
 
 
 
