@@ -19,18 +19,21 @@ import { Suspense } from 'react';
 import Loader from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
 
-export default function MovieDetailPage({ movieInfo }) {
+export default function MovieDetailPage({ data }) {
   const {
-    originalTitle,
+    original_title,
     title,
     genres,
     overview,
-    poster,
-    releaseDate,
-    voteAverage,
-  } = movieInfo;
+    poster_path,
+    release_date,
+    vote_average,
+  } = data;
 
-  const genresArray = genres.map(gen => gen.name).join(',');
+  // Prepear data for render
+  const rating = Math.round(vote_average * 10);
+  const date = release_date.slice(0, 4);
+  const genresArray = genres.map(gen => gen.name).join(', ');
   const location = useLocation();
 
   return (
@@ -38,30 +41,30 @@ export default function MovieDetailPage({ movieInfo }) {
       <DetailsContainer>
         <Image
           src={
-            poster
-              ? `https://image.tmdb.org/t/p/w500${poster}`
-              : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg`
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : `https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/No-image-available.jpg/640px-No-image-available.jpg`
           }
           alt={title}
         />
         <InfoContainer>
           <Title>
-            {originalTitle ? originalTitle : 'There should have been a title'}
+            {original_title ? original_title : 'There should have been a title'}
           </Title>
           <Text>
-            <TitleSpan>Rating:</TitleSpan>{' '}
-            {voteAverage ? voteAverage : 'Absent'}
+            <TitleSpan>Rating: </TitleSpan>{' '}
+            {rating ? rating : 'Absent'}
           </Text>
           <Text>
-            <TitleSpan>Release date:</TitleSpan>{' '}
-            {releaseDate ? releaseDate : 'Absent'}
+            <TitleSpan>Release date: </TitleSpan>{' '}
+             {date ? date : 'Absent'}
           </Text>
           <Text>
-            <TitleSpan>Genre:</TitleSpan>{' '}
+            <TitleSpan>Genre: </TitleSpan>{' '}
             {genresArray ? genresArray : 'Repeated'}
           </Text>
           <Text>
-            <TitleSpan>Description:</TitleSpan>
+            <TitleSpan>Description: </TitleSpan>
             {overview
               ? overview
               : 'There should have been a description here, but it is better to see once than to read a hundred times.'}
@@ -69,7 +72,7 @@ export default function MovieDetailPage({ movieInfo }) {
         </InfoContainer>
       </DetailsContainer>
       <MoreInfo>
-        <More>Learn more</More>
+        <More>Additional information</More>
       </MoreInfo>
       <MoreNavigate>
         <MoreList>
@@ -94,13 +97,13 @@ export default function MovieDetailPage({ movieInfo }) {
 }
 
 MovieDetailPage.propTypes = {
-  movieInfo: PropTypes.shape({
-    originalTitle: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    original_title: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     genres: PropTypes.array.isRequired,
     overview: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    voteAverage: PropTypes.number.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
   }).isRequired,
 };

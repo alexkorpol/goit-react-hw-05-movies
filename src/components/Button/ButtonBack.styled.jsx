@@ -7,7 +7,7 @@ export const ButtonTag = styled(NavLink)`
   left: 5%;
   padding: 10px 15px;
   border-radius: 2px;
-  background-color: #42362b;
+  background-color: #6981e3;
 
   font-size: 18px;
   font-weight: 700;
@@ -20,6 +20,6 @@ export const ButtonTag = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: #f25c54;
+    color: #42362b;
   }
 `;

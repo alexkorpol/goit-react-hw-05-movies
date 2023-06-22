@@ -15,7 +15,7 @@ const STATUS = {
   RESOLVED: 'resolved',
 };
 
-export default function MovieDetails() {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetailPage, setMovieDetailPage] = useState();
   const [error, setError] = useState(null);
@@ -23,6 +23,7 @@ export default function MovieDetails() {
 
   const location = useLocation();
   const backLink = useRef(location?.state?.from ?? '/');
+
 
   useEffect(() => {
     const detailInfo = async () => {
@@ -47,8 +48,10 @@ export default function MovieDetails() {
         <Button location={backLink.current} />
         {error && <Navigate to="/" replace />}
         {status === STATUS.PENDING && <Loader />}
-        {movieDetailPage && <MovieDetailPage movieInfo={movieDetailPage} />}
+        {movieDetailPage && <MovieDetailPage data={movieDetailPage} />}
       </Container>
     </Section>
   );
 }
+
+export default MovieDetails

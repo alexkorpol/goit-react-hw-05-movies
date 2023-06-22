@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Item, Image, Title } from './MovieListItem.styled';
 
 export function MovieListItem({ id, title, poster }) {
+  
   const location = useLocation();
 
   return (

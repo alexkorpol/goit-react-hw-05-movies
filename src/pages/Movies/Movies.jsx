@@ -17,7 +17,7 @@ const STATUS = {
   RESOLVED: 'resolved',
 };
 
-export default function Movies() {
+  const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [error, setError] = useState(null);
@@ -70,4 +70,6 @@ export default function Movies() {
       {status === STATUS.PENDING && <Loader />}
     </div>
   );
-}
+  }
+
+export default Movies

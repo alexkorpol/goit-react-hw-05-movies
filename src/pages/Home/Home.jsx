@@ -14,7 +14,7 @@ const STATUS = {
 };
 
 
-export const Home = () => {
+const Home = () => {
   const [status, setStatus] = useState(STATUS.IDLE);
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -77,6 +77,8 @@ console.log("movies +++++Home++++++>>>>>", movies)
     </main>
   );
 };
+
+export  default Home
 
 //  const getMovies = async () => {
 //       try {
