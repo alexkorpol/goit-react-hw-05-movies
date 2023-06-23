@@ -9,6 +9,6 @@ export default function ErrorMessageToUser({ message }) {
   );
 }
 
-Error.propTypes = {
+ErrorMessageToUser.propTypes = {
   message: PropTypes.string.isRequired,
 };

@@ -8,7 +8,6 @@ axios.defaults.params = {
   language: 'en-US',
 };
 
-
 // ! ====== for component Home popular movies ======
 export const getTrendingMovies = async () => {
   const { data } = await axios.get('/trending/movie/day');
@@ -43,6 +42,20 @@ export const getMovieReviews = async movieId => {
 
   return data;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // !========================Work Requests to API =================================================
 // список самых популярных фильмов на сегодня для создания коллекции на главной странице -

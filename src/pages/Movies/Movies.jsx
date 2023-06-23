@@ -1,21 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { MoviesList } from 'components/MoviesList/MoviesList';
+import  MoviesList  from 'components/MoviesList/MoviesList';
 import ErrorMessageToUser from 'components/ErrorOccurred/ErrorOccurred';
 import SearchForm from 'components/SearchForm/SearchForm';
 import Loader from 'components/Loader/Loader';
 import { searchMovies } from 'service/api';
 
-
-
-
-
-const STATUS = {
+  const STATUS = {
   IDLE: 'idle',
   PENDING: 'pending',
   REJECTED: 'rejected',
   RESOLVED: 'resolved',
-};
+  };
 
   const Movies = () => {
   const [movies, setMovies] = useState([]);

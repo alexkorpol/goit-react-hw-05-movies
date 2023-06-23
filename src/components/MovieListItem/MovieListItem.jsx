@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Item, Image, Title } from './MovieListItem.styled';
 
-export function MovieListItem({ id, title, poster }) {
-  
+ const MovieListItem = ({ id, title, poster }) => {
+
   const location = useLocation();
 
   return (
@@ -23,4 +23,12 @@ export function MovieListItem({ id, title, poster }) {
       </Link>
     </Item>
   );
-}
+ }
+export default MovieListItem
+
+
+MovieListItem.propTypes = {
+  title: PropTypes.string,
+  id: PropTypes.number,
+  poster: PropTypes.string,
+};

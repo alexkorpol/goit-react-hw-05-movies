@@ -1,12 +1,11 @@
-import { useEffect, useState, useRef } from 'react'; //+
+import { useEffect, useState, useRef } from 'react';
 import { getMovieDetails } from 'service/api';
-
-import { useParams } from 'react-router-dom'; //+
-import { Navigate, useLocation } from 'react-router-dom'; //+
-import MovieDetailPage from 'components/MovieDetailPage/MovieDetailPage'; //+
-import { Section, Container } from './MovieDetails.styled';//+
-import Button from 'components/Button/Button';//+
-import Loader from 'components/Loader/Loader';//+
+import { useParams } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import MovieDetailPage from 'components/MovieDetailPage/MovieDetailPage';
+import { Section, Container } from './MovieDetails.styled';
+import Button from 'components/Button/Button';
+import Loader from 'components/Loader/Loader';
 
 const STATUS = {
   IDLE: 'idle',

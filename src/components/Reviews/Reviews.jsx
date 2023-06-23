@@ -17,8 +17,7 @@ const Reviews = () => {
           setError('There are no reviews');
           return;
         }
-        console.log("data", data.results);
-        console.log("data.length", data.results.length);
+
 // prepare info about reviews
         const reviewsInfo = data.results.map(({ id, author, content }) => ({
           id,
